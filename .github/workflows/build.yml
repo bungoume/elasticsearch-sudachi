@@ -2,10 +2,10 @@ name: build
 
 on:
   push:
-    branches: [ develop ]
+    branches: [ develop, es810 ]
   pull_request:
     types: [opened, synchronize, reopened]
-    branches: [ develop ]
+    branches: [ develop, es810 ]
 
 jobs:
   build:
@@ -14,20 +14,13 @@ jobs:
     strategy:
       matrix:
         es-version:
+          - 'es:8.10.1'
+          - 'es:8.10.0'
           - 'es:8.8.1'
-          - 'es:8.7.1'
-          - 'es:8.6.2'
-          - 'es:8.5.3'
-          - 'es:8.4.3'
-          - 'es:8.2.3'
           - 'es:7.17.10'
-          - 'es:7.14.2'
-          - 'es:7.10.2'
           - 'os:2.8.0'
-          - 'os:2.7.0'
-          - 'os:2.6.0'
     env:
-      mainJob: ${{ matrix.es-version == 'es:8.8.1' }}
+      mainJob: ${{ matrix.es-version == 'es:8.10.1' }}
       githubRef: ${{ github.ref }}
     continue-on-error: true
     steps:
