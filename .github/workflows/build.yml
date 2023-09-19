@@ -24,6 +24,7 @@ jobs:
     env:
       mainJob: ${{ matrix.es-version == 'es:8.10.1' }}
       githubRef: ${{ github.ref }}
+      GRADLE_BUILD_ACTION_CACHE_DEBUG_ENABLED: true
     continue-on-error: true
     steps:
     - uses: actions/checkout@v3
