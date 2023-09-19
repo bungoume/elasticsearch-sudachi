@@ -37,7 +37,7 @@ jobs:
       uses: eskatos/gradle-command-action@v2
       with:
         arguments: -PengineVersion=${{ matrix.es-version }} printVersionForGithubActions
-        cache-read-only: false # ${{ github.ref != 'refs/heads/develop' }}
+        cache-disabled: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Build # This stage sets up gradle caching
