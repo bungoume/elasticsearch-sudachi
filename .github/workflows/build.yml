@@ -2,10 +2,10 @@ name: build
 
 on:
   push:
-    branches: [ develop, es810 ]
+    branches: [ develop, es8101 ]
   pull_request:
     types: [opened, synchronize, reopened]
-    branches: [ develop, es810 ]
+    branches: [ develop, es8101 ]
   workflow_call:
 
 
